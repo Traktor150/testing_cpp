@@ -18,43 +18,46 @@ void print_complex(char *c) {
             switch (*c) {
                 case 0b11000010:
                     if (*(c + 1) == 0b10100010) {
-                        printf("å\n");
+                        printf("å\n"); // replase with write(KEY_A_RING)
                         c += 2;
                     }
                     break;
                 case 0b11000011:
                     if (*(c + 1) == 0b10100010) {
-                        printf("ä\n");
+                        printf("ä\n"); // replase with write(KEY_A_UMLAUT)
                         c += 2;
                     }
                     if (*(c + 1) == 0b10100011) {
-                        printf("ö\n");
+                        printf("ö\n"); // replase with write(KEY_O_UMLAUT)
                         c += 2;
                     }
                     break;
                 case 0b11000001:
                     if (*(c + 1) == 0b10100010) {
-                        printf("Å\n");
+                        // reqires presing and relesing shift
+                        printf("Å\n"); // replase with write(KEY_A_RING)
                         c += 2;
                     }
                     if (*(c + 1) == 0b10100011) {
-                        printf("Ä\n");
+                        // reqires presing and relesing shift
+                        printf("Ä\n"); // replase with write(KEY_A_UMLAUT)
                         c += 2;
                     }
                     if (*(c + 1) == 0b10100101) {
-                        printf("Ö\n");
+                        // reqires presing and relesing shift
+                        printf("Ö\n"); // replase with write(KEY_O_UMLAUT)
                         c += 2;
                     }
                     break;
                     // if it is not a special character print the first byte and continue
                 default:
-                    print_simple(*c);
+                    print_simple(*c); // replase with write(*c)
                     c++;
             }
             continue;
         }
 
-        print_simple(*c);
+        print_simple(*c); // replase with write(*c)
         c++;
     }
 
