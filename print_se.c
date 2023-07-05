@@ -5,6 +5,7 @@ void print_simple(char c) {
     printf("%c\n", c);
 }
 
+
 void print_complex(char *c) {
     // print all characters until we reach a null character using print simple
     while (*c != '\0') {
@@ -18,46 +19,49 @@ void print_complex(char *c) {
             switch (*c) {
                 case 0b11000010:
                     if (*(c + 1) == 0b10100010) {
-                        printf("å\n"); // replase with write(KEY_A_RING)
+                        printf("å\n"); // Keyboard.write(KEY_A_RING) // replace with comment
                         c += 2;
                     }
                     break;
                 case 0b11000011:
                     if (*(c + 1) == 0b10100010) {
-                        printf("ä\n"); // replase with write(KEY_A_UMLAUT)
+                        printf("ä\n"); // Keyboard.write(KEY_A_UMLAUT) // replace with comment
                         c += 2;
                     }
                     if (*(c + 1) == 0b10100011) {
-                        printf("ö\n"); // replase with write(KEY_O_UMLAUT)
+                        printf("ö\n"); // Keyboard.write(KEY_O_UMLAUT) // replace with comment
                         c += 2;
                     }
                     break;
                 case 0b11000001:
                     if (*(c + 1) == 0b10100010) {
-                        // reqires presing and relesing shift
-                        printf("Å\n"); // replase with write(KEY_A_RING)
+                        // Keyboard.press(KEY_LEFT_SHIFT); // uncomment
+                        printf("Å\n"); // Keyboard.write(KEY_A_RING) // replace with comment
+                        // Keyboard.release(KEY_LEFT_SHIFT); // uncomment
                         c += 2;
                     }
                     if (*(c + 1) == 0b10100011) {
-                        // reqires presing and relesing shift
-                        printf("Ä\n"); // replase with write(KEY_A_UMLAUT)
+                        // Keyboard.press(KEY_LEFT_SHIFT); // uncomment
+                        printf("Ä\n"); // Keyboard.write(KEY_A_UMLAUT) // replace with comment
+                        // Keyboard.release(KEY_LEFT_SHIFT); // uncomment
                         c += 2;
                     }
                     if (*(c + 1) == 0b10100101) {
-                        // reqires presing and relesing shift
-                        printf("Ö\n"); // replase with write(KEY_O_UMLAUT)
+                        // Keyboard.press(KEY_LEFT_SHIFT); // uncomment
+                        printf("Ö\n"); // Keyboard.write(KEY_O_UMLAUT) // replace with comment
+                        // Keyboard.release(KEY_LEFT_SHIFT); // uncomment
                         c += 2;
                     }
                     break;
                     // if it is not a special character print the first byte and continue
                 default:
-                    print_simple(*c); // replase with write(*c)
+                    print_simple(*c); // Keyboard.write(*c) // replace with comment
                     c++;
             }
             continue;
         }
 
-        print_simple(*c); // replase with write(*c)
+        print_simple(*c); // Keyboard.write(*c) // replace with comment
         c++;
     }
 
